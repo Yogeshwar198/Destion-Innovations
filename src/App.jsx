@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Login from './components/Login';
+import Login from './pages/Login';
 import Setting from './pages/Setting';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
