@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { StoreContext } from '../context/store';
 
 const Login = () => {
     const [currentState, setCurrentState] = useState('Login');
+    const { navigate } = useContext(StoreContext)
 
     // Validation schema using Yup
     const validationSchema = Yup.object().shape({
@@ -22,6 +24,8 @@ const Login = () => {
     // Form submission handler
     const onSubmitHandler = async (values, { resetForm }) => {
         console.log('Form values:', values);
+         // Navigate to the home route
+         navigate('/');
         // You can handle login or signup logic here
         resetForm();
     };
